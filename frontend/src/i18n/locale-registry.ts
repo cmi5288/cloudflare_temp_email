@@ -37,6 +37,13 @@ export const LOCALE_REGISTRY = [
     turnstileLocale: 'zh-CN',
   },
   {
+    locale: 'zh-TW',
+    label: '繁體中文',
+    browserMatches: ['zh-TW', 'zh-HK', 'zh-MO'],
+    naive: { locale: zhCN, dateLocale: dateZhCN },
+    turnstileLocale: 'zh-TW',
+  },
+  {
     locale: 'en',
     label: 'English',
     browserMatches: ['en'],

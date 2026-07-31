@@ -1,4 +1,4 @@
-import { DEFAULT_LOCALE, getPathWithLocale, isSupportedLocale } from '../i18n/utils'
+import { DEFAULT_LOCALE, getPathWithLocale } from '../i18n/utils'
 
 export const hashPassword = async (password: string) => {
     // user crypto to hash password
@@ -8,9 +8,11 @@ export const hashPassword = async (password: string) => {
 }
 
 export const getRouterPathWithLang = (path: string, lang: string) => {
-    const normalizedLang = isSupportedLocale(lang) ? lang : DEFAULT_LOCALE;
-
-    return getPathWithLocale(path, normalizedLang);
+    const supportedLanguages = ['en', 'es', 'pt-BR', 'ja', 'de', 'zh', 'zh-TW'];
+    if (supportedLanguages.includes(lang)) {
+        return getPathWithLocale(path, lang);
+    }
+    return getPathWithLocale(path, DEFAULT_LOCALE);
 }
 
 export const utcToLocalDate = (utcDate: string, useUTCDate: boolean) => {

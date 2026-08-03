@@ -1,9 +1,6 @@
 name: Deploy Frontend with page function
 
 on:
-  workflow_run:
-    workflows: [Upstream Sync]
-    types: [completed]
   push:
     tags:
       - "*"
